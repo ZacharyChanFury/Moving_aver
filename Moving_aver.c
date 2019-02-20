@@ -14,6 +14,8 @@ volatile u8 moving_aver_cnt_Y =  0;
 volatile double moving_aver_sum_Y = 0.0;
 volatile double moving_aver_result_Y = 0.0;
 
+void Balanced_initialized(u8 cnt);
+
 void Moving_Aver_X(double data, u8 moving_aver_number)
 {
 	if(moving_aver_cnt_X == 0)
@@ -23,13 +25,11 @@ void Moving_Aver_X(double data, u8 moving_aver_number)
 		moving_aver_cnt_X ++;
 		moving_aver_data_X_1st = data;
 		moving_aver_sum_X += data;
-//		moving_aver_result_X = data;
 	}
 	else if(moving_aver_cnt_X != moving_aver_number)
 	{
 		moving_aver_cnt_X ++;
 		moving_aver_sum_X += data;
-//		moving_aver_result_X = data;
 	}
 	else
 	{
@@ -52,13 +52,11 @@ void Moving_Aver_Y(double data, u8 moving_aver_number)
 		moving_aver_cnt_Y ++;
 		moving_aver_data_Y_1st = data;
 		moving_aver_sum_Y += data;
-//		moving_aver_result_Y = data;
 	}
 	else if(moving_aver_cnt_Y != moving_aver_number)
 	{
 		moving_aver_cnt_Y ++;
 		moving_aver_sum_Y += data;
-//		moving_aver_result_Y = data;
 	}
 	else
 	{
